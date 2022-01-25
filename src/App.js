@@ -59,6 +59,8 @@ function App() {
     }
     getUnSkillArtisanData();
   }, []);
+
+  console.log(customerRequest)
   return (
     <>
       {/* <AppContextProvider> */}
