@@ -25,4 +25,3 @@ function Index() {
   );
 }
 export default Index;
-// flex flex-col h-screen justify-between

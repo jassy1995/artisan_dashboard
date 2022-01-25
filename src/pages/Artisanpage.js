@@ -1,20 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ArtisanTable from "../components/ArtisanTable";
 
-// import axios from "axios";
-
 function ArtisanPage({ users }) {
-  // let [users, setUser] = useState([]);
-  // useEffect(() => {
-  //   async function getData() {
-  //     const data = await axios.get(
-  //       "https://artisanservice.herokuapp.com/api/all_records"
-  //     );
-  //     setUser(data.data.artisans);
-  //   }
-  //   getData();
-  // }, []);
-
   return (
     <>
       <div className="h-10 mt-10"></div>

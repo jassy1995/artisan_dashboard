@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
+import DashboardPage from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 import Index from "./pages/Index";
 import SkillPage from "./pages/SkillPage";
@@ -64,20 +64,8 @@ function App() {
       {/* <AppContextProvider> */}
       <BrowserRouter>
         <Routes>
-          {/* <Route index element={<Dashboard />} /> */}
           <Route path="/" element={<Index />}>
-            <Route
-              index
-              element={
-                <Dashboard
-                  skills={skills}
-                  unSkills={unSkills}
-                  artisans={artisans}
-                  customers={customerRequest}
-                />
-              }
-            />
-            {/* <Route path="/" element={<Dashboard />} /> */}
+            <Route index element={<DashboardPage users={customerRequest} />} />
             <Route path="skill" element={<SkillPage users={skills} />} />
             <Route path="unSkill" element={<UnSkillPage users={unSkills} />} />
             <Route path="artisan" element={<ArtisanPage users={artisans} />} />
