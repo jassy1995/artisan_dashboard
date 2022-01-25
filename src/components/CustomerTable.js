@@ -1,3 +1,4 @@
+let num = 0;
 function CustomerRequestTable({ users }) {
   return (
     <div>
@@ -36,7 +37,7 @@ function CustomerRequestTable({ users }) {
                     {index + 1}
                   </th>
                   <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    {user?.full_name}
+                    {num?.concat(user?.full_name?.slice(3))}
                   </td>
                   <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left word-wrap">
                     {user?.user_id}
