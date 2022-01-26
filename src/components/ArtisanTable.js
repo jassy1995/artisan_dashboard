@@ -24,6 +24,9 @@ function ArtisanTable({ users }) {
                 <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
                   address
                 </th>
+                <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
+                  payment_status
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -47,6 +50,9 @@ function ArtisanTable({ users }) {
                     </td>
                     <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                       {user?.address}
+                    </td>
+                    <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                      {user?.payment_status}
                     </td>
                   </tr>
                 ))}
