@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function UnSkillTable({ users }) {
   return (
     <div>
@@ -38,6 +40,9 @@ function UnSkillTable({ users }) {
               <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm  border border-slate-300 font-light text-center">
                 phone
               </th>
+              <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm border border-slate-300 font-light text-left">
+                Action
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -77,6 +82,14 @@ function UnSkillTable({ users }) {
                   <td className="border-b border-gray-200 align-middle font-light text-sm px-2 py-4 text-center border border-slate-300 whitespace-nowrap">
                     {user?.phone ? user.phone : "-"}
                   </td>
+                  <td className="border-b border-gray-200 align-middle font-light text-sm px-2 py-4 text-center border border-slate-300 whitespace-nowrap">
+                    <Link to={`/assign/${user.id}`} aria-current="page">
+                      <button className="btn text-sm text-sm text-green-500">
+                        assign
+                      </button>
+                    </Link>
+                    ;
+                  </td>
                 </tr>
               ))}
           </tbody>
@@ -89,3 +102,7 @@ function UnSkillTable({ users }) {
 }
 
 export default UnSkillTable;
+
+<Link to="/assign" aria-current="page">
+  <button className="text-sm text-sm text-green-500">assign</button>
+</Link>;

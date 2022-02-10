@@ -8,6 +8,7 @@ import UnSkillPage from "./pages/UnSkillPage";
 import ArtisanPage from "./pages/Artisanpage";
 import CustomerRequestPage from "./pages/CustomerRequestPage";
 import axios from "axios";
+import AssignPage from "./pages/AssignPage";
 // import AppContextProvider from "./api/context";
 
 function App() {
@@ -60,7 +61,7 @@ function App() {
     getUnSkillArtisanData();
   }, []);
 
-  console.log(customerRequest)
+  console.log(customerRequest);
   return (
     <>
       {/* <AppContextProvider> */}
@@ -75,6 +76,7 @@ function App() {
               path="customer"
               element={<CustomerRequestPage users={customerRequest} />}
             />
+            <Route path="assign/:id" element={<AssignPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
