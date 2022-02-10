@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 let num = "0";
 function CustomerRequestTable({ users }) {
   return (
