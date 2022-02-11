@@ -40,6 +40,9 @@ function UnSkillTable({ users }) {
               <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm  border border-slate-300 font-light text-center">
                 phone
               </th>
+              <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm border border-slate-300 font-light text-left">
+                Action
+              </th>
               <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm  border border-slate-300 font-light text-center">
                 agent_name
               </th>
@@ -51,9 +54,6 @@ function UnSkillTable({ users }) {
               </th>
               <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm  border border-slate-300 font-light text-center">
                 agent_Dob
-              </th>
-              <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm border border-slate-300 font-light text-left">
-                Action
               </th>
             </tr>
           </thead>
@@ -89,14 +89,22 @@ function UnSkillTable({ users }) {
                     {user?.name ? user.name : "-"}
                   </td>
                   <td className="border-b border-gray-200 align-middle font-light text-sm px-2 py-4 text-center border border-slate-300 whitespace-nowrap">
-                    {user?.email ? user.name : "-"}
+                    {user?.email ? user.email : "-"}
                   </td>
                   <td className="border-b border-gray-200 align-middle font-light text-sm px-2 py-4 text-center border border-slate-300 whitespace-nowrap">
                     {user?.phone ? user.phone : "-"}
                   </td>
                   <td className="border-b border-gray-200 align-middle font-light text-sm px-2 py-4 text-center border border-slate-300 whitespace-nowrap">
                     <Link to={`/assign/${user.id}`} aria-current="page">
-                      <button className="btn text-sm text-sm text-green-500">
+                      <button
+                        className="btn text-sm text-sm text-gray-500"
+                        style={{
+                          backgroundColor: "green",
+                          padding: "5px",
+                          color: "white",
+                          borderRadius: "8px",
+                        }}
+                      >
                         assign
                       </button>
                     </Link>
@@ -106,13 +114,13 @@ function UnSkillTable({ users }) {
                     {user?.agent_name ? user.agent_name : "-"}
                   </td>
                   <td className="border-b border-gray-200 align-middle font-light text-sm px-2 py-4 text-center border border-slate-300 whitespace-nowrap">
-                    {user?.gender ? user.agent_gender : "-"}
+                    {user?.agent_gender ? user.agent_gender : "-"}
                   </td>
                   <td className="border-b border-gray-200 align-middle font-light text-sm px-2 py-4 text-center border border-slate-300 whitespace-nowrap">
-                    {user?.location ? user.agent_location : "-"}
+                    {user?.agent_location ? user.agent_location : "-"}
                   </td>
                   <td className="border-b border-gray-200 align-middle font-light text-sm px-2 py-4 text-center border border-slate-300 whitespace-nowrap">
-                    {user?.dob ? user.agent_dob : "-"}
+                    {user?.agent_dob ? user.agent_dob : "-"}
                   </td>
                 </tr>
               ))}
