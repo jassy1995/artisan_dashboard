@@ -44,10 +44,13 @@ function UnSkillTable({ users }) {
                 agent_name
               </th>
               <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm  border border-slate-300 font-light text-center">
-                gender
+                agent_gender
               </th>
               <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm  border border-slate-300 font-light text-center">
-                location
+                agent_location
+              </th>
+              <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm  border border-slate-300 font-light text-center">
+                agent_Dob
               </th>
               <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm border border-slate-300 font-light text-left">
                 Action
@@ -103,10 +106,13 @@ function UnSkillTable({ users }) {
                     {user?.agent_name ? user.agent_name : "-"}
                   </td>
                   <td className="border-b border-gray-200 align-middle font-light text-sm px-2 py-4 text-center border border-slate-300 whitespace-nowrap">
-                    {user?.gender ? user.gender : "-"}
+                    {user?.gender ? user.agent_gender : "-"}
                   </td>
                   <td className="border-b border-gray-200 align-middle font-light text-sm px-2 py-4 text-center border border-slate-300 whitespace-nowrap">
-                    {user?.location ? user.location : "-"}
+                    {user?.location ? user.agent_location : "-"}
+                  </td>
+                  <td className="border-b border-gray-200 align-middle font-light text-sm px-2 py-4 text-center border border-slate-300 whitespace-nowrap">
+                    {user?.dob ? user.agent_dob : "-"}
                   </td>
                 </tr>
               ))}
