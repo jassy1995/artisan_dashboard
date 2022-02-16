@@ -16,6 +16,42 @@ function App() {
   let [unSkills, setUnSkill] = useState([]);
   let [customerRequest, setCustomerRequest] = useState([]);
   let [artisans, setArtisan] = useState([]);
+  let [start, setStart] = useState(0);
+  // let [paginate, setPaginate] = useState({
+  //   page: 1,
+  //   end: false,
+  //   fetching: false,
+  // });
+
+  // useEffect(() => {
+  //   load(paginate.page);
+  //   window.addEventListener("scroll", handleWindowScroll);
+  //   return ()=> {
+  //   window.removeEventListener("scroll", handleWindowScroll);
+  // }
+  // })
+
+  // async function load(page) {
+  //     if (page === 1) this.loading = true;
+  //     else this.pagination.fetching = true;
+  //     const limit = 20;
+  //     const start = page * limit - limit;
+  //     const res = await axios.post(
+  //       `https://wema.creditclan.com/api/v3/wesabi/unskilled/${start}`,
+
+  //     );
+
+  //     this.properties = [...this.properties, ...res.data];
+  //     this.loading = false;
+  //     this.pagination.fetching = false;
+  //   },
+  //   handleWindowScroll(e) {
+  //     if (this.loading || this.pagination.fetching || this.end) return;
+  //     const { clientHeight, scrollHeight, scrollTop } =
+  //       e.target.scrollingElement;
+  //     const scrolled = scrollTop + clientHeight > scrollHeight - 800;
+  //     if (scrolled) this.load(++this.pagination.page);
+  //   },
 
   //get register artisan
   useEffect(() => {
@@ -54,12 +90,29 @@ function App() {
   useEffect(() => {
     async function getUnSkillArtisanData() {
       const { data } = await axios.get(
-        "https://wema.creditclan.com/api/v3/wesabi/unskilled/0"
+        `https://wema.creditclan.com/api/v3/wesabi/unskilled/${start}`
       );
       setUnSkill(data.data);
+      setStart(20);
     }
     getUnSkillArtisanData();
   }, []);
+
+  const next_function = async () => {
+    const { data } = await axios.get(
+      `https://wema.creditclan.com/api/v3/wesabi/unskilled/${start}`
+    );
+    setUnSkill(data.data);
+    setStart(start + 20);
+  };
+
+  const pre_function = async () => {
+    const { data } = await axios.get(
+      `https://wema.creditclan.com/api/v3/wesabi/unskilled/${start - 40}`
+    );
+    setUnSkill(data.data);
+    setStart(start - 20);
+  };
 
   console.log(customerRequest);
   return (
@@ -70,7 +123,16 @@ function App() {
           <Route path="/" element={<Index />}>
             <Route index element={<DashboardPage users={customerRequest} />} />
             <Route path="skill" element={<SkillPage users={skills} />} />
-            <Route path="unSkill" element={<UnSkillPage users={unSkills} />} />
+            <Route
+              path="unSkill"
+              element={
+                <UnSkillPage
+                  users={unSkills}
+                  pre_function={pre_function}
+                  next_function={next_function}
+                />
+              }
+            />
             <Route path="artisan" element={<ArtisanPage users={artisans} />} />
             <Route
               path="customer"

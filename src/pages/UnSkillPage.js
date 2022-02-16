@@ -1,7 +1,7 @@
 import React from "react";
 import UnSkillTable from "../components/UnSkillTable";
 
-function UnSkillPage({ users }) {
+function UnSkillPage({ users, pre_function, next_function }) {
   return (
     <>
       <div className="h-10 mt-10"></div>
@@ -17,7 +17,11 @@ function UnSkillPage({ users }) {
                 </div>
                 <div className="p-4 undefined">
                   <div className="overflow-x-auto">
-                    <UnSkillTable users={users} />
+                    <UnSkillTable
+                      pre_function={pre_function}
+                      next_function={next_function}
+                      users={users}
+                    />
                   </div>
                 </div>
               </div>
