@@ -17,6 +17,7 @@ function App() {
   let [customerRequest, setCustomerRequest] = useState([]);
   let [artisans, setArtisan] = useState([]);
   let [start, setStart] = useState(0);
+  let [devf, setDev] = useState(false);
   // let [paginate, setPaginate] = useState({
   //   page: 1,
   //   end: false,
@@ -96,21 +97,21 @@ function App() {
       setStart(20);
     }
     getUnSkillArtisanData();
-  }, []);
+  }, [start]);
 
   const next_function = async () => {
-    const { data } = await axios.get(
-      `https://wema.creditclan.com/api/v3/wesabi/unskilled/${start}`
-    );
-    setUnSkill(data.data);
+    // const { data } = await axios.get(
+    //   `https://wema.creditclan.com/api/v3/wesabi/unskilled/${start}`
+    // );
+    // setUnSkill(data.data);
     setStart(start + 20);
   };
 
   const pre_function = async () => {
-    const { data } = await axios.get(
-      `https://wema.creditclan.com/api/v3/wesabi/unskilled/${start - 40}`
-    );
-    setUnSkill(data.data);
+    // const { data } = await axios.get(
+    //   `https://wema.creditclan.com/api/v3/wesabi/unskilled/${start - 40}`
+    // );
+    // setUnSkill(data.data);
     setStart(start - 20);
   };
 
