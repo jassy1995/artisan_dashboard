@@ -6,13 +6,13 @@ function UnSkillTable({ users, pre_function, next_function }) {
       <div className="flex justify-right">
         <button
           onClick={pre_function}
-          className="border border-slate-400 bg-primary text-white"
+          className="border border-slate-400 bg-primary text-primary"
         >
           previous
         </button>
         <button
           onClick={next_function}
-          className="border border-slate-400 bg-primary text-white"
+          className="border border-slate-400 bg-primary text-primary"
         >
           Next
         </button>
