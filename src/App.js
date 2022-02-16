@@ -17,7 +17,7 @@ function App() {
   let [customerRequest, setCustomerRequest] = useState([]);
   let [artisans, setArtisan] = useState([]);
   let [start, setStart] = useState(0);
-  let [devf, setDev] = useState(false);
+  // let [devf, setDev] = useState(false);
   // let [paginate, setPaginate] = useState({
   //   page: 1,
   //   end: false,
