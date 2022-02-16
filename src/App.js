@@ -94,7 +94,7 @@ function App() {
         `https://wema.creditclan.com/api/v3/wesabi/unskilled/${start}`
       );
       setUnSkill(data.data);
-      setStart(20);
+      // setStart(20);
     }
     getUnSkillArtisanData();
   }, [start]);

@@ -3,17 +3,11 @@ import { Link } from "react-router-dom";
 function UnSkillTable({ users, pre_function, next_function }) {
   return (
     <div>
-      <div className="flex justify-space">
-        <button
-          onClick={pre_function}
-          className=" border-solid border-gray-200"
-        >
+      <div className="flex justify-right">
+        <button onClick={pre_function} className="bg-primary text-white">
           previous
         </button>
-        <button
-          onClick={next_function}
-          className=" border-solid border-gray-200"
-        >
+        <button onClick={next_function} className="bg-primary text-white">
           Next
         </button>
       </div>
