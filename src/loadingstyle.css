@@ -1,0 +1,113 @@
+.skeleton,
+.skeleton-children > * {
+  position: relative;
+  width: fit-content;
+  min-width: 30px;
+  max-height: 12px;
+  border: 0 !important;
+  border-radius: 5px !important;
+  overflow: hidden !important;
+  color: transparent !important;
+  background: transparent !important;
+  border: transparent !important;
+}
+
+.skeleton.fit-content,
+.skeleton-children.fit-content > * {
+  min-width: initial;
+  max-height: initial;
+}
+
+.skeleton.fit-content::before,
+.skeleton-children.fit-content > *::before {
+  border-radius: inherit !important;
+}
+
+.skeleton:not(.children)::before,
+.skeleton-children > *::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f1f1f1;
+  border: 3px solid #f1f1f1;
+  border-radius: 5px !important;
+  animation: skeleton 2s ease-in-out infinite alternate-reverse;
+  z-index: 1;
+}
+
+.skeleton.dark::before,
+.skeleton-children.dark > *::before {
+  animation: skeleton 2s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes skeleton {
+  from {
+    background: #f1f1f1;
+    border-color: #f1f1f1;
+  }
+  to {
+    background: #f8f8f8;
+    border-color: #f8f8f8;
+  }
+}
+
+.modal-transact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-img-transact-container {
+  /* min-width: 300px;
+max-width: 300px;
+min-height: 300px;
+max-height: 300px; */
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  max-height: 300px;
+  border: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .modal-img-transact-container {
+    display: none;
+    margin-left: 1.3rem;
+    width: 100%;
+    height: 100%;
+    max-width: 120px;
+    max-height: 120px;
+  }
+}
+
+.modal-img-transact-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.modal-transact-content {
+  overflow: hidden;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+.modal-user-trasact-avatar-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.modal-user-trasact-avatar-container .fas {
+  font-size: 6rem;
+  display: block;
+}

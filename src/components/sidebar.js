@@ -10,7 +10,7 @@ function SideBar() {
       >
         <div className="flex-col items-stretch min-h-full flex-nowrap px-0 relative">
           <h1 className="text-gray-900 text-xl font-serif font-bold leading-normal mt-0 mb-2">
-            Creditclan
+            Wesabi
           </h1>
 
           <div className="flex flex-col">

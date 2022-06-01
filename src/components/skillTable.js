@@ -1,4 +1,12 @@
-function SkillTable({ users }) {
+import React, { useContext } from "react";
+import { Store } from "../store";
+import LoadingSpinner from "../components/LoadingSpinner";
+import Nodata from "../components/empty";
+function SkillTable() {
+  const {
+    state: { skills: users, loading },
+  } = useContext(Store);
+
   const tdSize = {
     width: "10px",
     wordWrap: "break-word",
@@ -6,7 +14,11 @@ function SkillTable({ users }) {
 
   return (
     <div>
-      {users.length > 0 ? (
+      {loading ? (
+        <LoadingSpinner />
+      ) : !users.length ? (
+        <Nodata />
+      ) : (
         <table className="items-center w-full bg-transparent border-collapse">
           <thead>
             <tr>
@@ -89,8 +101,6 @@ function SkillTable({ users }) {
               ))}
           </tbody>
         </table>
-      ) : (
-        <h2>no record yet</h2>
       )}
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import CustomerRequestTable from "../components/CustomerTable";
 
-function DashboardPage({ users }) {
+function DashboardPage() {
   return (
     <>
       <div className="h-10 mt-10"></div>
@@ -17,7 +17,7 @@ function DashboardPage({ users }) {
                 </div>
                 <div className="p-4 undefined">
                   <div className="overflow-x-auto">
-                    <CustomerRequestTable users={users} />
+                    <CustomerRequestTable />
                   </div>
                 </div>
               </div>

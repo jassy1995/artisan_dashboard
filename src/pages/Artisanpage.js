@@ -1,7 +1,7 @@
 import React from "react";
 import ArtisanTable from "../components/ArtisanTable";
 
-function ArtisanPage({ users }) {
+function ArtisanPage() {
   return (
     <>
       <div className="h-10 mt-10"></div>
@@ -17,7 +17,7 @@ function ArtisanPage({ users }) {
                 </div>
                 <div className="p-4 undefined">
                   <div className="overflow-x-auto">
-                    <ArtisanTable users={users} />
+                    <ArtisanTable />
                   </div>
                 </div>
               </div>
