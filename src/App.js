@@ -13,7 +13,7 @@ import { Store } from "./store";
 
 function App() {
   const { state, dispatch } = useContext(Store);
-  const { start } = state;
+  const { customers, unSkills, artisans, skills, start } = state;
 
   useEffect(() => {
     async function getCustomerRequestData() {
@@ -33,7 +33,7 @@ function App() {
       }
     }
     getCustomerRequestData();
-  }, []);
+  }, [customers, artisans, dispatch]);
 
   useEffect(() => {
     async function getSkillArtisanData() {
@@ -49,7 +49,7 @@ function App() {
       }
     }
     getSkillArtisanData();
-  }, []);
+  }, [skills, dispatch]);
 
   useEffect(() => {
     async function getUnSkillArtisanData() {
@@ -66,7 +66,7 @@ function App() {
       }
     }
     getUnSkillArtisanData();
-  }, [start, dispatch]);
+  }, [unSkills, start, dispatch]);
 
   return (
     <>
