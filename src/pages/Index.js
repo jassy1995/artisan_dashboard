@@ -2,7 +2,6 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import SideBar from "../components/sidebar";
-// import Footer from "../components/Footer";
 
 function Index() {
   return (
@@ -18,7 +17,6 @@ function Index() {
             </div>
           </div>
           <Outlet />
-          {/* <Footer /> */}
         </div>
       </div>
     </>

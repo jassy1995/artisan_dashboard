@@ -37,141 +37,8 @@ function UnSkillTable() {
               Next
             </button>
           </div>
-          <ul className="p-6 divide-slate-200">
-            {users.map((user, index) => (
-              <li
-                key={index}
-                className="flex  pl-2 py- first:pt-0 last:pb-0  justify-between border border-4 border-indigo-500/50 mb-2 pr-3"
-              >
-                <div>
-                  <span
-                    className="text-slate-500 bg-primary "
-                    style={{
-                      backgroundColor: "darkgray",
-                      color: "white",
-                      width: "40px",
-                      height: "40px",
-                      padding: "2px",
-                      // borderRadius: "50%",
-                    }}
-                  >
-                    {index + 1}
-                  </span>
-                  <div className="font-bold pb-0">Service type</div>
-                  <small className="ml-4">
-                    {user?.service_type ? user.service_type : "pending"}
-                  </small>
-                  <div className="font-bold pb-0">Description</div>
-                  <small className="ml-4">
-                    {user?.service_description
-                      ? user.service_description
-                      : "pending"}
-                  </small>
-                  <div className="font-bold pb-0">Date</div>
-                  <small className="ml-4">
-                    {user?.service_date_time
-                      ? user.service_date_time
-                      : "pending"}
-                  </small>
-                  <div className="font-bold pb-0">No of people</div>
-                  <small className="ml-4">
-                    {user?.number_of_people ? user.number_of_people : "pending"}
-                  </small>
-                  <div className="font-bold pb-0">Request status</div>
-                  <small className="ml-4">
-                    {user?.request_status ? user.request_status : "pending"}
-                  </small>
-                  <div className="font-bold pb-0">Link</div>
-                  <small className="ml-4">
-                    {user?.link ? user.link : "pending"}
-                  </small>
-                  <div className="font-bold pb-0">Title</div>
-                  <small className="ml-4">
-                    {" "}
-                    {user?.job_title ? user.job_title : "pending"}
-                  </small>
-                  <div className="font-bold pb-0">Name</div>
-                  <small className="ml-4">
-                    {" "}
-                    {user?.name ? user.name : "pending"}
-                  </small>
-                  <div className="font-bold pb-0">Email</div>
-                  <small className="ml-4">
-                    {user?.email ? user.email : "pending"}
-                  </small>
-                  <div className="font-bold pb-0">Phone </div>
-                  <small className="ml-4">
-                    {" "}
-                    {user?.phone ? user.phone : "pending"}
-                  </small>
-                  <div className="font-bold pb-0">Action</div>
-                  <small className="ml-4">
-                    <Link to={`/assign/${user.id}`} aria-current="page">
-                      <button
-                        className="btn text-sm text-sm text-gray-500"
-                        style={{
-                          backgroundColor: "green",
-                          padding: "5px",
-                          color: "white",
-                          borderRadius: "8px",
-                        }}
-                      >
-                        assign
-                      </button>
-                    </Link>
-                  </small>
-                  <div className="font-bold pb-0">Agent name</div>
-                  <small className="ml-4">
-                    {" "}
-                    {user?.agent_name ? user.agent_name : "pending"}
-                  </small>
 
-                  <div className="font-bold pb-0">Agent gender</div>
-                  <small className="ml-4">
-                    {" "}
-                    {user?.agent_gender ? user.agent_gender : "pending"}
-                  </small>
-                  <div className="font-bold pb-0">Agent location</div>
-                  <small className="ml-4">
-                    {user?.agent_location ? user.agent_location : "pending"}
-                  </small>
-                  <div className="font-bold pb-0">Agent DOB</div>
-                  <small className="ml-4">
-                    {" "}
-                    {user?.agent_dob ? user.agent_dob : "pending"}
-                  </small>
-                </div>
-              </li>
-            ))}
-          </ul>
-          {/* <ul
-            role="list"
-            class="list-group list-group-numbered p-6 divide-y divide-slate-200"
-          >
-            <li class="list-group-item flex justify-between align-items-start  py-4 first:pt-0 last:pb-0">
-              <div class="ms-2 me-auto">
-                <div class="fw-bold">Subheading</div>
-                Content for list item
-              </div>
-              <span class="badge bg-primary rounded-pill">14</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-              <div class="ms-2 me-auto">
-                <div class="fw-bold">Subheading</div>
-                Content for list item
-              </div>
-              <span class="badge bg-primary rounded-pill">14</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-              <div class="ms-2 me-auto">
-                <div class="fw-bold">Subheading</div>
-                Content for list item
-              </div>
-              <span class="badge bg-primary rounded-pill">14</span>
-            </li>
-          </ul> */}
-
-          {/* <table className="items-center w-full bg-transparent border-separate border border-slate-400">
+          <table className="items-center w-full bg-transparent border-separate border border-slate-400">
             <thead>
               <tr>
                 <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left border border-slate-300">
@@ -294,7 +161,7 @@ function UnSkillTable() {
                   </tr>
                 ))}
             </tbody>
-          </table> */}
+          </table>
         </div>
       )}
     </div>

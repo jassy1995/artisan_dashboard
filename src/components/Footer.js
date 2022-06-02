@@ -9,7 +9,3 @@ function Footer() {
 }
 
 export default Footer;
-
-{
-  /* <footer class="h-10 bg-blue-500">Footer</footer>; */
-}
