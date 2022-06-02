@@ -1,12 +1,33 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { Store } from "../store";
 import LoadingSpinner from "../components/LoadingSpinner";
 import Nodata from "../components/empty";
+import axios from "axios";
 let num = "0";
 function CustomerRequestTable() {
   const {
     state: { customers: users, loading },
+    dispatch,
   } = useContext(Store);
+
+  useEffect(() => {
+    async function getCustomerRequestData() {
+      dispatch({ type: "START_FETCHING", payload: true });
+      try {
+        const data = await axios.get(
+          "https://artisanservice.herokuapp.com/api/all_records"
+        );
+        dispatch({
+          type: "GET_CUSTOMER",
+          payload: data.data.customer_request,
+        });
+      } catch (error) {
+        dispatch({ type: "END_FETCHING", payload: false });
+        console.log(error);
+      }
+    }
+    getCustomerRequestData();
+  }, [dispatch]);
 
   return (
     <div>

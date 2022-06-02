@@ -1,11 +1,29 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { Store } from "../store";
 import LoadingSpinner from "../components/LoadingSpinner";
 import Nodata from "../components/empty";
+import axios from "axios";
 function SkillTable() {
   const {
-    state: { skills: users, loading },
+    state: { skills, loading },
+    dispatch,
   } = useContext(Store);
+
+  useEffect(() => {
+    async function getSkillArtisanData() {
+      dispatch({ type: "START_FETCHING", payload: true });
+      try {
+        const { data } = await axios.get(
+          "https://wema.creditclan.com/api/v3/wesabi/skilled/0"
+        );
+        dispatch({ type: "GET_SKILL", payload: data.data });
+      } catch (error) {
+        dispatch({ type: "END_FETCHING", payload: false });
+        console.log(error);
+      }
+    }
+    getSkillArtisanData();
+  }, [dispatch]);
 
   const tdSize = {
     width: "10px",
@@ -16,7 +34,7 @@ function SkillTable() {
     <div>
       {loading ? (
         <LoadingSpinner />
-      ) : !users.length ? (
+      ) : !skills.length ? (
         <Nodata />
       ) : (
         <table className="items-center w-full bg-transparent border-collapse">
@@ -58,44 +76,44 @@ function SkillTable() {
             </tr>
           </thead>
           <tbody>
-            {users.length > 0 &&
-              users.map((user, index) => (
+            {skills.length > 0 &&
+              skills.map((skill, index) => (
                 <tr key={index}>
                   <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                     {index + 1}
                   </th>
                   <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    {user?.service_type}
+                    {skill?.service_type}
                   </td>
                   <td
                     className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left word-wrap"
                     style={tdSize}
                   >
-                    {user?.service_description}
+                    {skill?.service_description}
                   </td>
                   <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    {user?.service_date_time}
+                    {skill?.service_date_time}
                   </td>
                   <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    {user?.number_of_people}
+                    {skill?.number_of_people}
                   </td>
                   <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    {user?.request_status}
+                    {skill?.request_status}
                   </td>
                   <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    {user?.link}
+                    {skill?.link}
                   </td>
                   <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    {user?.job_title}
+                    {skill?.job_title}
                   </td>
                   <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    {user?.name}
+                    {skill?.name}
                   </td>
                   <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    {user?.email}
+                    {skill?.email}
                   </td>
                   <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                    {user?.phone}
+                    {skill?.phone}
                   </td>
                 </tr>
               ))}

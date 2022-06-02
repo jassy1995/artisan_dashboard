@@ -1,12 +1,30 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Store } from "../store";
 import LoadingSpinner from "../components/LoadingSpinner";
 import Nodata from "../components/empty";
+import axios from "axios";
 
 function UnSkillTable() {
   const { state, dispatch } = useContext(Store);
   const { start, unSkills: users, loading } = state;
+
+  useEffect(() => {
+    async function getUnSkillArtisanData() {
+      dispatch({ type: "START_FETCHING", payload: true });
+      try {
+        let startingPoint = start > -1 ? start : 0;
+        const { data } = await axios.get(
+          `https://wema.creditclan.com/api/v3/wesabi/unskilled/${startingPoint}`
+        );
+        dispatch({ type: "GET_UNSKILL", payload: data.data });
+      } catch (error) {
+        dispatch({ type: "END_FETCHING", payload: false });
+        console.log(error);
+      }
+    }
+    getUnSkillArtisanData();
+  }, [start, dispatch]);
 
   const next_function = async () => {
     dispatch({ type: "INCREASE_START", payload: start + 20 });
