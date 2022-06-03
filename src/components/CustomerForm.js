@@ -40,89 +40,90 @@ function CustomerForm(props) {
 
   return (
     <>
-      <form class="w-full max-w-lg" onSubmit={handleSubmit}>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full flex justify-center">
+      <form className="w-full max-w-lg" onSubmit={handleSubmit}>
+        <div className="flex flex-wrap -mx-3 mb-3">
+          <div className="w-full flex justify-center">
             {isLoading ? (
               <h2 className="text-center text-green-500">{submitingText}</h2>
             ) : (
-              <h2 className="text-center">FILL IN THESE Form </h2>
+              <h2 className="text-center">FILL IN THESE FORM </h2>
             )}
           </div>
-          <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <div className="w-full md:w-1/2 px-3 mb-5 md:mb-0">
             <label
-              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-first-name"
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="grid-first-name"
             >
               Name
             </label>
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
-              class="appearance-none block  w-full bg-gray-200 text-gray-700 border order-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              className="appearance-none block  w-full bg-gray-200 text-gray-700 border order-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="grid-first-name"
               type="text"
               placeholder="Jane"
             />
           </div>
-          <div class="w-full md:w-1/2 px-3">
+          <div className="w-full md:w-1/2 px-2">
             <label
-              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-last-name"
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="grid-last-name"
             >
               Gender
             </label>
             <select
               onChange={handleSelectedChange}
-              class="appearance-none block  w-full  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="appearance-none block  w-full  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             >
               <option value="male">male</option>
               <option value="female">female</option>
             </select>
           </div>
         </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
+        <div className="flex flex-wrap -mx-3 mb-2">
+          <div className="w-full px-3">
             <label
-              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-password"
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="grid-password"
             >
               DATE OF BIRTH
             </label>
             <input
               value={date_of_birth}
               onChange={(e) => setDateOfBirth(e.target.value)}
-              class="appearance-none block  w-full  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="appearance-none block  w-full  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id=""
               type="text"
               placeholder="12/3/1990"
             />
           </div>
         </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
+        <div className="flex flex-wrap -mx-3 mb-2">
+          <div className="w-full px-3">
             <label
-              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-password"
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="grid-password"
             >
               Location
             </label>
             <input
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              class="appearance-none block  w-full  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="appearance-none block  w-full  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-password"
               type="text"
               placeholder="location"
             />
           </div>
         </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
+        <div className="flex flex-wrap -mx-3 mb-2">
+          <div className="w-full px-3">
             <input
               type="submit"
               value="Submit"
-              class="appearance-none block  w-full  bg-green-200 text-light-700  rounded py-3 px-4 mb-1"
+              className="appearance-none block  w-full  bg-green-500 text-light-700  rounded py-3 px-4 mb-1 font-bold"
+              style={{ color: "white" }}
             />
           </div>
         </div>

@@ -119,7 +119,7 @@ function UnSkillTable() {
                     <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left border border-slate-300">
                       {user?.service_type ? user.service_type : "-"}
                     </td>
-                    <td className="align-middle font-light text-sm whitespace-normal px-2 py-2 text-left border border-slate-300">
+                    <td className="align-middle font-light text-sm whitespace-normal px-2 py-4 text-left border border-slate-300">
                       {user?.service_description
                         ? user.service_description
                         : "-"}

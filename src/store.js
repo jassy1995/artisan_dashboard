@@ -31,14 +31,12 @@ function reducer(state, action) {
     case "GET_CUSTOMER":
       return {
         ...state,
-        customers: [...state.customers, ...action.payload],
-        loading: false,
+        customers: action.payload,
       };
     case "GET_ARTISAN":
       return {
         ...state,
-        artisans: [...state.artisans, ...action.payload],
-        loading: false,
+        artisans: action.payload,
       };
     case "INCREASE_START":
       return { ...state, start: action.payload };

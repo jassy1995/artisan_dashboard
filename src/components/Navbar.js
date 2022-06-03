@@ -1,8 +1,8 @@
 function Navbar() {
   return (
     <>
-      <nav className="bg-light-blue-500 md:ml-64 py-6 px-3">
-        <div className="container max-w-full mx-auto flex items-center justify-between md:pr-8 md:pl-10">
+      <nav className="bg-light-blue-500 md:ml-64  py-4 px-2">
+        <div className="container max-w-full mx-auto flex items-center justify-between md:pr-8 md:pl-10 mb-5">
           <div className="md:hidden">
             <button className="false flex items-center justify-center gap-1 font-bold outline-none uppercase tracking-wider focus:outline-none focus:shadow-none transition-all duration-300 rounded-full w-12 h-12 p-0 grid place-items-center text-sm leading-relaxed bg-transparent  undefined">
               <span
@@ -36,7 +36,7 @@ function Navbar() {
                     aria-expanded="false"
                     style={{ padding: "0px", color: "transparent" }}
                   >
-                    <div className="w-12">
+                    <div className="w-12 py-2">
                       <img
                         style={{ height: "48px" }}
                         src="https://image.shutterstock.com/image-vector/user-avatar-icon-sign-profile-260nw-1145752283.jpg"

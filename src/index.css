@@ -12,3 +12,25 @@ code {
     monospace;
 }
 
+.btn-color1{
+  background-color: #0096DB;
+  color: white;
+  margin-right: 4px;
+  height: 40px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.btn-color2{
+  border:none;
+  outline: 1px solid gainsboro;
+  color: black;
+  margin-right: 4px;
+  height: 40px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.form-size{
+  width:50%;
+}

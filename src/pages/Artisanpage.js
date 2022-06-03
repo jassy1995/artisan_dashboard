@@ -16,7 +16,7 @@ function ArtisanPage() {
                   </div>
                 </div>
                 <div className="p-4 undefined">
-                  <div className="overflow-x-auto">
+                  <div className="overflow-x-auto overflow-y-auto">
                     <ArtisanTable />
                   </div>
                 </div>
